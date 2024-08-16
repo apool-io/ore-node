@@ -5,6 +5,13 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
+if which solana-keygen;then 
+    echo -e "solana install ok"
+else
+    echo -e "\033[31m solana env not export,  Please run command:  source /root/.bashrc && source /root/.profile \033[0m"
+	exit 1
+fi
+
 UBUNTU_VERSION=$(lsb_release -rs)
 
 # Check if it is Ubuntu 22.04
