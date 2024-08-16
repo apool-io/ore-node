@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$EUID" -ne 0 ]; then
+  echo "This script must be run as root. Please use sudo or switch to the root user."
+  exit 1
+fi
+
 UBUNTU_VERSION=$(lsb_release -rs)
 
 # Check if it is Ubuntu 22.04
@@ -37,8 +42,11 @@ else
 fi
     
 
+source /root/.profile
+source /root/.bashrc
 mkdir -p /root/.config/solana/ 
 keypair="/root/.config/solana/oremine.json"
+
 if [ ! -f $keypair ];then
     solana-keygen new --word-count 12 -o $keypair
     echo -e "\033[32;5m ↑↑↑ Important !\033[0m  -->  Remember to copy the $keypair and copy the mnemonic phrase !"
