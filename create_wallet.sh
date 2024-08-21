@@ -31,7 +31,7 @@ if [ ! -f $keypair ];then
     echo -e "\033[32m Generating Solana wallet Successfully. \033[0m"
     echo "Please top up with at least 0.005 SOL ore-node to Run"
 else
-    echo -e "\033[31m solana wallet already exists --> $keypair \033[0m"
+    echo -e "\033[33m solana wallet already exists --> $keypair \033[0m"
 fi
 
 # stop solana-ore container
