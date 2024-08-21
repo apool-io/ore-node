@@ -47,10 +47,7 @@ else
     echo "$app latest package Not Found..."
     exit 1;
 fi
-    
 
-source /root/.profile
-source /root/.bashrc
 mkdir -p /root/.config/solana/ 
 keypair="/root/.config/solana/oremine.json"
 
@@ -58,10 +55,10 @@ if [ ! -f $keypair ];then
     echo -e "\033[32;5m ↑↑↑ Important !\033[0m"
     solana-keygen new --derivation-path m/44'/501'/0'/0' --force --word-count 12 -o $keypair
     echo -e "\033[32;5m ↑↑↑ Important !\033[0m  -->  Remember to copy the $keypair and copy the mnemonic phrase !"
+    echo "Please top up with at least 0.005 SOL ore-node to Run"
 else
     echo -e "\033[31m solana wallet already exists --> $keypair \033[0m"
 fi
-
 
 mkdir -p /opt/ore
 if [ -f $package_name ];then
