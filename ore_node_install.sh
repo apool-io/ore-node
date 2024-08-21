@@ -55,7 +55,8 @@ mkdir -p /root/.config/solana/
 keypair="/root/.config/solana/oremine.json"
 
 if [ ! -f $keypair ];then
-    solana-keygen new --word-count 12 -o $keypair
+    echo -e "\033[32;5m ↑↑↑ Important !\033[0m"
+    solana-keygen new --derivation-path m/44'/501'/0'/0' --force --word-count 12 -o $keypair
     echo -e "\033[32;5m ↑↑↑ Important !\033[0m  -->  Remember to copy the $keypair and copy the mnemonic phrase !"
 else
     echo -e "\033[31m solana wallet already exists --> $keypair \033[0m"
