@@ -84,6 +84,12 @@ JSON_RPC_URL=https://api.mainnet-beta.solana.com
 # REST service port number
 REST_PORT=3080
 
+# Pool difficulty
+POOL_DIFFICULTY=20
+
+# Network difficulty
+NETWORK_DIFFICULTY=20
+
 # Priority fee
 PRIORITY_FEE=20000
 
