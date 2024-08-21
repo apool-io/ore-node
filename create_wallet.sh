@@ -27,10 +27,11 @@ mkdir -p /root/.config/solana/
 keypair="/root/.config/solana/oremine.json"
 
 if [ ! -f $keypair ];then
-    docker exec -t -uroot solana-ore solana-keygen new --word-count 12 -o $keypair --no-bip39-passphrase
+    echo -e "\033[32;5m ↓↓↓ Important !\033[0m"
+    docker exec -t -uroot solana-ore solana-keygen new --derivation-path m/44'/501'/0'/0' --force --word-count 12 -o $keypair --no-bip39-passphrase
     echo -e "\033[32;5m ↑↑↑ Important !\033[0m  -->  Remember to copy the $keypair and copy the mnemonic phrase !"
     echo -e "\033[32m Generating Solana wallet Successfully. \033[0m"
-    echo "Please top up with at least 0.005 SOL ore-node to Runing"
+    echo "Please top up with at least 0.005 SOL ore-node to Run"
 else
     echo -e "\033[31m solana wallet already exists --> $keypair \033[0m"
 fi
