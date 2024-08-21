@@ -18,6 +18,7 @@ if ! docker ps|grep "solana-ore$" > /dev/null;then
     docker run --rm -d --name solana-ore --network ore-network \
 	   -v /root/.config/solana/:/root/.config/solana/ \
 	   $image:latest
+    echo "The solana-ore container used to create the wallet has been started"
 fi
 
 # Create new solana wallet
