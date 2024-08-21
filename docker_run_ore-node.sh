@@ -9,7 +9,7 @@ fi
 # docker run ore-node
 image="registry-intl.cn-hongkong.aliyuncs.com/apool-ore-node/solana-ore-node"
 
-docker run --rm --network ore-network \
+docker run --rm -d --network ore-network \
 	   --name ore-node \
            -v /opt/ore:/app/ore \
 	   -v /var/log/ore-node:/var/log/ore-node \
