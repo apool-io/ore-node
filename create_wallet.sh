@@ -18,8 +18,6 @@ if ! docker ps|grep solana-ore > /dev/null;then
     docker run --rm -d --name solana-ore --network ore-network \
 	   -v /root/.config/solana/:/root/.config/solana/ \
 	   $image:latest
-else
-    echo "docker container solana-ore is running"
 fi
 
 # Create new solana wallet
@@ -37,4 +35,4 @@ else
 fi
 
 # stop solana-ore container
-docker stop solana-ore
+docker stop solana-ore > /dev/null
