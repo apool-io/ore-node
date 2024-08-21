@@ -66,6 +66,7 @@ fi
 mkdir -p /opt/ore
 if [ -f $package_name ];then
     tar xf $package_name -C /opt/ore
+    chmod +x /opt/ore/$app
 else
     echo "$package_name latest package Download Failed"
     exit 1
