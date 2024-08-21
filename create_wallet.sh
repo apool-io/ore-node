@@ -15,7 +15,7 @@ if ! docker network ls|grep ore-network > /dev/null;then
 fi
 
 if ! docker ps|grep solana-ore > /dev/null;then
-    docker run -d --name solana-ore --network ore-network \
+    docker run --rm -d --name solana-ore --network ore-network \
 	   -v /root/.config/solana/:/root/.config/solana/ \
 	   $image:latest
 else
@@ -35,3 +35,6 @@ if [ ! -f $keypair ];then
 else
     echo -e "\033[31m solana wallet already exists --> $keypair \033[0m"
 fi
+
+# stop solana-ore container
+docker stop solana-ore
