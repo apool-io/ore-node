@@ -89,7 +89,7 @@ POOL_DIFFICULTY=20
 NETWORK_DIFFICULTY=20
 
 # Priority fee
-PRIORITY_FEE=20000
+PRIORITY_FEE=50000
 
 # Filepath to keypair to use for mining.
 MINING_KEYPAIR_FILEPATH=/root/.config/solana/oremine.json
