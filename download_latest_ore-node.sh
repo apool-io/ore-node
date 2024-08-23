@@ -6,8 +6,6 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
-
-
 # ore-node work dir
 app="ore-node"
 github_api="https://api.github.com/repos/apool-io/ore-node/releases/latest"
