@@ -6,14 +6,8 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
-
 # run solana_ore container
 image="registry-intl.cn-hongkong.aliyuncs.com/apool-ore-node/solana-ore-node"
-
-if ! docker network ls|grep ore-network > /dev/null;then
-    docker network create ore-network
-fi
-
 if ! docker ps|grep "solana-ore$" > /dev/null;then
     docker run --rm -d --name solana-ore  \
 	   -v /root/.config/solana/:/root/.config/solana/ \
